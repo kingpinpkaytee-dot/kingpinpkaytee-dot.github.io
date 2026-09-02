@@ -306,6 +306,68 @@
             border-radius: 3px;
         }
         .blog-cta:hover, .blog-nav:hover { opacity: 0.88; }
+        .gallery-intro {
+            color: var(--muted);
+            max-width: 700px;
+            margin-bottom: 20px;
+        }
+        .gallery-grid {
+            display: grid;
+            grid-template-columns: repeat(2, minmax(0, 1fr));
+            gap: 18px;
+            margin: 20px 0 12px;
+        }
+        .gallery-card {
+            overflow: hidden;
+            background: #fff;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+            box-shadow: 0 6px 16px rgba(13, 27, 42, 0.08);
+        }
+        .gallery-card img {
+            display: block;
+            width: 100%;
+            height: 330px;
+            object-fit: cover;
+            object-position: center 28%;
+        }
+        .gallery-card figcaption { padding: 16px 18px 18px; }
+        .gallery-card figcaption strong {
+            display: block;
+            color: var(--primary);
+            margin-bottom: 5px;
+        }
+        .gallery-card figcaption span {
+            display: block;
+            color: var(--muted);
+            font-size: 0.9rem;
+        }
+        .gallery-card--archive {
+            display: flex;
+            align-items: center;
+            min-height: 420px;
+            padding: 28px;
+            background: linear-gradient(145deg, var(--primary), #1d3b55);
+            color: #fff;
+        }
+        .gallery-card--archive figcaption { padding: 0; }
+        .gallery-card--archive figcaption strong { color: var(--accent); font-size: 1.1rem; }
+        .gallery-card--archive figcaption span { color: #f0e6c8; }
+        .gallery-icon {
+            display: block;
+            margin-bottom: 22px;
+            color: var(--accent);
+            font-size: 2.4rem;
+            line-height: 1;
+        }
+        .gallery-note {
+            margin-top: 18px;
+            padding: 13px 16px;
+            background: var(--light);
+            border-left: 4px solid var(--accent);
+            color: var(--muted);
+            font-size: 0.88rem;
+        }
         .social-grid {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
@@ -344,6 +406,9 @@
         @media (max-width: 600px) {
             .hero h1 { font-size: 2.2rem; }
             .tracks { columns: 1; }
+            .gallery-grid { grid-template-columns: 1fr; }
+            .gallery-card img { height: 360px; }
+            .blog-post { padding: 22px 20px; }
         }
     </style>
 </head>
@@ -517,11 +582,69 @@
 
         <!-- ===== PHOTO / MEDIA GALLERY ===== -->
         <section aria-label="Photo and Media Gallery">
-            <h2>Photo / Media Gallery</h2>
-            <div class="gallery-item">
-                <strong>1. Primary Artist Portrait (Recommended for Press)</strong><br>
-                Outdoor close-up headshot of DiggerMan smiling under natural light. Clear, professional quality. Ideal for articles, profiles, thumbnails and press features. This is the current Spotify profile photo.
+            <h2>DiggerMan Photo Gallery</h2>
+            <p class="gallery-intro">A growing visual record of DiggerMan’s artist journey—from performance-ready portraits and live appearances to the focused atmosphere of studio sessions. Press and industry partners may request high-resolution files for approved editorial use.</p>
+
+            <div class="gallery-grid">
+                <figure class="gallery-card">
+                    <img src="assets/gallery/diggerman-live-ready-portrait.webp" alt="DiggerMan standing outdoors in Riverlea, Johannesburg" loading="lazy">
+                    <figcaption>
+                        <strong>Artist Presence — Live-Ready Portrait</strong>
+                        <span>Current artist portrait for press features, event promotion, interviews and editorial coverage.</span>
+                    </figcaption>
+                </figure>
+
+                <figure class="gallery-card gallery-card--archive">
+                    <figcaption>
+                        <span class="gallery-icon" aria-hidden="true">◆</span>
+                        <strong>Live Performances</strong>
+                        <span>Performance photography is being added to this evolving archive. For bookings, event coverage or approved live-show imagery, contact The Kingpin Entertainment Pty Ltd.</span>
+                    </figcaption>
+                </figure>
+
+                <figure class="gallery-card gallery-card--archive">
+                    <figcaption>
+                        <span class="gallery-icon" aria-hidden="true">✦</span>
+                        <strong>Studio Sessions</strong>
+                        <span>Behind-the-scenes studio photography is being added as new sessions are documented. Request approved studio assets for media and industry use.</span>
+                    </figcaption>
+                </figure>
+
+                <figure class="gallery-card gallery-card--archive">
+                    <figcaption>
+                        <span class="gallery-icon" aria-hidden="true">●</span>
+                        <strong>Brand & Archive Visuals</strong>
+                        <span>Explore the wider DiggerMan visual world through the official brand site and Riverlea West Archive.</span>
+                    </figcaption>
+                </figure>
             </div>
-            <div class="gallery-item">
-                <strong>2. Brand Portrait (Canva Official)</strong><br>
-                Cinematic portrait of DiggerMan in a vibrant multi-coloured p
+
+            <div class="gallery-note"><strong>Media use:</strong> The supplied portrait is presented for press and editorial reference. For high-resolution downloads, live-performance images, studio-session photographs, logos or cover artwork, please contact <a href="mailto:kingpinpkaytee@gmail.com">kingpinpkaytee@gmail.com</a>.</div>
+        </section>
+
+        <!-- ===== CONTACT & BOOKING ===== -->
+        <div class="contact-box">
+            <h3 style="color:var(--accent); margin-top:0;">Contact & Booking</h3>
+            <p>For press inquiries, interviews, features, collaboration proposals, live bookings or licensing requests:</p>
+            <p>Email: <a href="mailto:kingpinpkaytee@gmail.com">kingpinpkaytee@gmail.com</a><br>
+            Phone / WhatsApp: +27 62 501 0696<br>
+            Primary Social: Instagram @nhlakanipho_phakathi</p>
+        </div>
+
+        <!-- ===== PRESS BOILERPLATE ===== -->
+        <section aria-label="Press Boilerplate">
+            <h2>Press Boilerplate</h2>
+            <p><strong>DiggerMan</strong> is a South African independent recording artist, songwriter and creative visionary from Johannesburg, Gauteng. Rooted in the Riverlea community of West Johannesburg, he creates music that captures neighbourhood energy, personal storytelling and the spirit of the urban west. Operating under The Kingpin Entertainment Pty Ltd with the banner Music • Passion • Legacy, DiggerMan is building his catalogue with intentional releases including the Genesis Flow series, the EP Riverlea Ext 9 (1.0), the single Sky, and the latest EP Fairy Tales (1.0). His music is live and searchable on Spotify.</p>
+        </section>
+
+        <div class="note">
+            <strong>Media Note:</strong> DiggerMan is an emerging independent artist. Streaming numbers and release information can change as the catalogue develops; please verify the latest Spotify presence directly before publication. High-resolution images and additional approved assets are available upon request from The Kingpin Entertainment Pty Ltd.
+        </div>
+    </main>
+
+    <footer>
+        <strong>DIGGERMAN</strong> • The Kingpin Entertainment Pty Ltd • Riverlea, Johannesburg • 2026<br>
+        Media Press Kit — For Media & Industry Use
+    </footer>
+</body>
+</html>
