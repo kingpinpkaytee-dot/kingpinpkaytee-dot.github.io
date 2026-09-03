@@ -84,6 +84,29 @@
         .cta:hover { opacity:.88; }
         .footer { padding:28px 24px; text-align:center; color:#aeb5ba; background:var(--navy); font: .82rem/1.5 'Helvetica Neue',Arial,sans-serif; }
         .footer strong { color:var(--gold); }
+        /* ===== COLOR-FILLED BRAND PRESENTATION ===== */
+        body {
+            background:
+                radial-gradient(circle at 8% 10%, rgba(201,162,39,0.24), transparent 26rem),
+                radial-gradient(circle at 94% 64%, rgba(25,76,112,0.20), transparent 30rem),
+                linear-gradient(135deg, #f8f5f0 0%, #e8f0f6 54%, #f7ebc8 100%);
+        }
+        .page {
+            background: rgba(255,255,255,0.84);
+            box-shadow: 0 0 42px rgba(13,27,42,0.08);
+            border-left: 1px solid rgba(201,162,39,0.18);
+            border-right: 1px solid rgba(201,162,39,0.18);
+        }
+        .article {
+            padding: 26px 30px;
+            border-radius: 8px;
+            border-top: 5px solid var(--gold);
+            background: linear-gradient(135deg, rgba(255,255,255,0.96), rgba(246,237,207,0.90));
+            box-shadow: 0 12px 30px rgba(13,27,42,0.09);
+        }
+        .dek, .byline, .caption { color: #43515b; }
+        .feature-image { box-shadow: 0 12px 28px rgba(13,27,42,0.16); }
+        .official-links { box-shadow: inset 0 -1px rgba(201,162,39,0.2); }
         @media (max-width:600px) { .page { padding-top:40px; } .site-header-inner { display:block; } .back { display:inline-block; margin-top:7px; } .article { font-size:1rem; } }
     </style>
 </head>
