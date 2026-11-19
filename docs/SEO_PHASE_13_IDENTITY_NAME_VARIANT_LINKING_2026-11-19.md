@@ -51,7 +51,7 @@ The root DiggerMan hub and `diggerman-entity-profile.json` provide the central e
 - Google Tag Manager, GA4, Search Console, robots directives, canonical URLs and sitemap policy.
 - Individual track-page content and metadata: existing track pages continue to reference the canonical DiggerMan MusicGroup ID.
 - Artist Frequency authentication, Supabase data, migration history, publication policy and autonomous publishing.
-- Cloudflare Pages deployment: Artist Frequency PR #7 is merged into the portal's main branch, but its live Cloudflare artifact was not redeployed. The Acer HTTP check returned 200 for the current Pages host but did not find the new alias or Spotify link in the served HTML. The repository's production-release gate remains in force; no Wrangler deployment was run.
+- Cloudflare Pages deployment: Artist Frequency PR #7 was merged and then deployed through Wrangler 4.165.0 to the existing production Pages project. Deployment ID: `cd562ac7-3d0e-4763-a563-d71a7a06098c`; immutable deployment URL: https://cd562ac7.global-music-submission-portal.pages.dev/; branch: `main`; source commit: `fcbbab4e22753bfac753e47aa8f162804333e304`. The canonical Pages domain now serves the new alias and Spotify reference.
 
 ## Search outcome note
 
@@ -74,3 +74,25 @@ A direct HTTP check from the connected Acer returned status 200 and found both t
 The Artist Frequency Cloudflare Pages host also returned HTTP 200, but the live HTML did not yet contain the new alias or Spotify Artist ID. Its source update is merged, while the hosted artifact remains unchanged pending the separate production-release gate.
 
 The social profile URLs are referenced consistently from the Person and MusicGroup entities and owned network pages. Social account bios/settings have not been edited or independently re-verified.
+
+
+## Cloudflare Pages production deployment and post-deploy QA
+
+On 19 November 2026, the merged Artist Frequency frontend update was deployed from the connected Acer through Wrangler 4.165.0 to the existing Cloudflare Pages project `global-music-submission-portal`.
+
+- Deployment ID: `cd562ac7-3d0e-4763-a563-d71a7a06098c`
+- Deployment URL: https://cd562ac7.global-music-submission-portal.pages.dev/
+- Project production host: https://global-music-submission-portal.pages.dev/
+- Branch metadata: `main`
+- Source commit metadata: `fcbbab4e22753bfac753e47aa8f162804333e304`
+- Commit message metadata: `SEO: connect Artist Frequency with DiggerMan identity network (#7)`
+- Upload result: 10 assets in the manifest; 2 new files uploaded and 8 already present in the asset store.
+- Wrangler reported: `Deployment complete`.
+
+Direct HTTP checks from the Acer after deployment returned HTTP 200 for:
+- Canonical project homepage and the new immutable deployment URL. Both responses contained `Dico Nhlakanipho Phakathi` and Spotify Artist ID `7fSMDP0eWrFwYol9Vye2Ty`.
+- `/src/app.js`, `/src/auth.js`, `/src/supabase-client.js`, `/supabase-config.js`, `/robots.txt` and `/sitemap.xml`.
+
+This confirms the canonical Cloudflare Pages host is now serving the updated Artist Frequency HTML and its required frontend assets. It is a reachability/content smoke test, not a full authenticated sign-up, OAuth, artist submission, billing or admin acceptance test.
+
+The staging directory was assembled from the committed public website files only: root HTML/SEO verification files, `assets/`, `src/`, and the public Supabase client configuration. Private operational folders such as `.git`, `.wrangler`, `docs/`, `supabase/`, `.github/` and `scripts/` were not included in the upload. The source checkout was fast-forwarded to `fcbbab4` before staging; the pre-existing untracked local `.wrangler/` log directory remained outside the upload.
