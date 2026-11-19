@@ -1,6 +1,6 @@
 # SEO Phase 12 — Broader Entity Network
 **Date:** 2026-11-19  
-**Status:** Source implementation merged; production rollout and indexing remain pending.
+**Status:** Source implementation merged; eight-area network reachability verified; Artist Frequency production host corrected to Cloudflare Pages; Google indexing remains on hold.
 
 ## Objective
 Extend DiggerMan's entity and discovery network across the press kit, artist blog, official artist website, The Kingpin Entertainment Pty Ltd website, Riverlea West Archive, DSP catalogue and social profiles.
@@ -64,14 +64,16 @@ Added public profile links to the network pages and artist entity profile:
 **Scope note:** Links and structured identity references were added to the owned websites. The social-platform account bios/settings themselves were not edited.
 
 ### 8. Artist Frequency — Global Music Submission Portal
-- The submitted hostname `https://artist-frequency-global-music-submission-portal.pages.dev/` does not resolve in the direct HTTP check; Windows DNS returned “The remote name could not be resolved”.
-- Repository deployment documentation identifies **Vercel**, not Cloudflare Pages, as the hosting provider.
-- The canonical public Vercel project domain is `https://artist-frequency.vercel.app/`; it returned HTTP 200 and served the Artist Frequency application.
-- The live root page and its `src/app.js`, `src/auth.js` and `src/supabase-client.js` assets each returned HTTP 200.
-- The preview project also serves HTTP 200, but its SSO protection is enabled and the preview response carries `X-Robots-Tag: noindex`; it is not the public production destination.
-- The separate `artist-frequency-html-verification.vercel.app` project is only a Google Search Console HTML-verification endpoint, not the Artist Frequency application.
-- The canonical Vercel project’s latest deployment is BLOCKED; its previous production deployment remains READY and is still serving the canonical domain. Therefore, the domain is reachable, but the latest source release is not certified as deployed.
-- Do not substitute the SSO-protected preview URL, the HTML-verification endpoint or the unresolved `.pages.dev` hostname for the canonical public portal URL.
+- Correct public production host: `https://global-music-submission-portal.pages.dev/`.
+- The supplied hostname `https://artist-frequency-global-music-submission-portal.pages.dev/` is not a configured Cloudflare Pages domain; the earlier DNS failure was caused by the hostname mismatch.
+- Connected Acer Wrangler 4.165.0 login and account access succeeded. Wrangler listed the Cloudflare Pages project `global-music-submission-portal`, with configured domain `global-music-submission-portal.pages.dev` and Git Provider `No`.
+- Latest listed Cloudflare production deployment: `3bb98c90-02e5-4533-aea7-67c75ccb0a68`, branch `main`, source commit `935db5b`, immutable URL `https://3bb98c90.global-music-submission-portal.pages.dev/`.
+- The 17 November production memorandum records a 21-path smoke test returning HTTP 200 after this deployment, including homepage, robots, sitemap, public JavaScript/config, Google verification path, IndexNow key file and dashboard/account/discovery/Marketplace/campaign/profile/stats/Premium/billing/admin routes.
+- Two GitHub commits after source `935db5b` (`ca0c5f58` and `1850f354`) are documentation-only; the current source-bearing main commit remains the code deployed to Pages. No redeployment is needed solely for those documentation commits.
+- The Cloudflare Pages project currently reports no Git provider connection; do not assume GitHub pushes automatically deploy. Future production updates must use the reviewed Wrangler direct-upload workflow unless Git integration is separately configured.
+- Supabase CLI linking from the Acer checkout succeeded for project `mdcvewnevgsgmyfnybgn` (West EU / Ireland). The subsequent migration comparison showed every version from `0001` through `0031` matching between Local, Remote and Time(UTC); no migration-version gap is listed.
+- Migration-history equality does not, by itself, prove every live database object definition. A fresh read-only catalog check should confirm the 0028 `auto_verification` and `auto_verified_at` columns, the 0029 publication policy version 2 and the hardened publication RPC before autonomous publication is treated as runtime-verified. No `db push` or migration write was performed during this check.
+- The separate Vercel `artist-frequency` project is not the selected public production portal. Its latest deployment record remains BLOCKED while an older READY deployment serves its own Vercel alias. The separate Vercel preview is SSO-protected and marked `noindex`; neither Vercel URL should replace the Cloudflare Pages canonical host.
 
 ## GitHub pull requests merged
 | Repository | PR | Merge commit |
@@ -131,25 +133,33 @@ A direct Windows HTTP check from the connected Acer device replaced the earlier 
 | Riverlea West Archive | `https://kingpinpkaytee-dot.github.io/thekingpin-entertainment-site/riverlea-west-archive/` | 200 |
 | Music catalogue | `https://kingpinpkaytee-dot.github.io/diggerman-site/music/` | 200 |
 | Entity profile JSON | `https://kingpinpkaytee-dot.github.io/diggerman-entity-profile.json` | 200 |
-| Artist Frequency public Vercel domain | `https://artist-frequency.vercel.app/` | 200 |
-| Submitted `.pages.dev` hostname | `https://artist-frequency-global-music-submission-portal.pages.dev/` | DNS name unresolved |
+| Artist Frequency Cloudflare Pages public domain | `https://global-music-submission-portal.pages.dev/` | 200 recorded in the 21-path production smoke test on 2026-11-17 |
+| Incorrectly supplied `.pages.dev` hostname | `https://artist-frequency-global-music-submission-portal.pages.dev/` | Not configured for the project; DNS name unresolved |
 
 The press kit and blog HTML expose the official social-network links. This verifies that the social destinations are linked from the owned network pages; it does not independently certify the current availability or ownership state of each social profile.
 
 ### Artist Frequency deployment status
-Vercel project inspection confirms:
-- Canonical project: `artist-frequency`; domain `artist-frequency.vercel.app`.
-- The canonical domain currently resolves to a prior READY production deployment, which returned HTTP 200.
-- The latest deployment record is BLOCKED and has no active alias.
-- Project state reports `live: false`; the canonical project remains paused/blocked for new production rollout.
-- The separate `artist-frequency-preview` project has a READY deployment, but SSO protection is enabled. Its preview response is marked `noindex`.
-- The separate HTML-verification project serves only the Google Search Console verification HTML and must not be mistaken for the production portal.
+Cloudflare Pages is the selected public production host:
+- Project: `global-music-submission-portal`.
+- Production hostname: `https://global-music-submission-portal.pages.dev/`.
+- Latest listed production deployment: `3bb98c90-02e5-4533-aea7-67c75ccb0a68`, branch `main`, source `935db5b`.
+- The documented 21-path production smoke test returned HTTP 200 following that deployment.
+- The Pages project reports no Git provider connection, so direct Wrangler uploads are the current deployment mode.
+
+Vercel findings are separate from the public production host:
+- The `artist-frequency` Vercel project has a latest BLOCKED deployment and an older READY deployment on its own alias. Do not treat that alias as the selected public portal.
+- The separate `artist-frequency-preview` deployment is SSO-protected and marked `noindex`; it is not an SEO destination.
+- The separate HTML-verification Vercel project remains only a Google Search Console HTML verification endpoint.
 
 ### Resolution and release gate
-- **Resolved:** the apparent portal outage was a hostname/provider mismatch. The supplied Cloudflare Pages hostname is not the configured portal host; the actual public Vercel domain is reachable.
-- **Verified serving:** all eight network areas have a reachable destination or visible linked destinations. The seven DiggerMan network web properties and the canonical Artist Frequency domain returned HTTP 200.
-- **Not yet resolved:** the latest Artist Frequency source release remains BLOCKED; the public canonical domain is still serving the prior READY deployment.
-- Do not unpause or promote the canonical Vercel project as part of this verification-only pass. A production release requires a separate explicit deployment decision and post-deployment QA.
-- Google Search Console indexing remains on hold until the latest intended content is confirmed on the live pages. GTM/GA4 remains parked and unchanged.
+- **Resolved:** the supplied Pages hostname was mistyped/mismatched. The Cloudflare project is present under `global-music-submission-portal`, and its configured production URL is `https://global-music-submission-portal.pages.dev/`.
+- **Verified:** Wrangler account/project access, the latest listed Cloudflare Production deployment, the documented 21-path HTTP 200 production smoke test, successful Supabase project linking and migration-history alignment through `0031`.
+- **Still pending:** a fresh read-only live catalog check for the 0028 columns, 0029 policy-version-2 row and publication RPC. Do not enable autonomous publication on the strength of migration-history alignment alone.
+- Do not unpause or promote the separate Vercel project as part of this verification pass.
+- Google Search Console indexing remains on hold; IndexNow HTTP 202 is notification receipt, not proof of Google indexing. GTM/GA4 remains parked.
 
 **Updated result:** network reachability verified; Artist Frequency hostname corrected; latest portal production deployment still blocked; indexing remains on hold.
+
+
+## Hosting and Supabase correction addendum
+The authoritative Acer-side reconciliation is recorded in [SEO Phase 12 Portal Hosting and Supabase Reconciliation — 2026-11-19](SEO_PHASE_12_PORTAL_HOSTING_AND_SUPABASE_RECONCILIATION_2026-11-19.md). It supersedes earlier assumptions that Vercel was the public production portal and confirms Supabase migration-history alignment through 0031.
