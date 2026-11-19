@@ -41,10 +41,18 @@
     "name": "The Kingpin Entertainment Pty Ltd",
     "url": "https://kingpinpkaytee-dot.github.io/thekingpin-entertainment-site/"
   },
-  "subjectOf": {
-    "@type": "Article",
-    "@id": "https://kingpinpkaytee-dot.github.io/blog/diggerman-artist-spotlight/#article",
-    "url": "https://kingpinpkaytee-dot.github.io/blog/diggerman-artist-spotlight/",
-    "headline": "DiggerMan: Turning Riverlea Stories Into a Living Sound"
-  }
+  "subjectOf": [
+    {
+      "@type": "Article",
+      "@id": "https://kingpinpkaytee-dot.github.io/blog/diggerman-artist-spotlight/#article",
+      "url": "https://kingpinpkaytee-dot.github.io/blog/diggerman-artist-spotlight/",
+      "headline": "DiggerMan: Turning Riverlea Stories Into a Living Sound"
+    },
+    {
+      "@type": "WebPage",
+      "@id": "https://kingpinpkaytee-dot.github.io/thekingpin-entertainment-site/riverlea-west-archive/#webpage",
+      "url": "https://kingpinpkaytee-dot.github.io/thekingpin-entertainment-site/riverlea-west-archive/",
+      "name": "Riverlea West Archive"
+    }
+  ]
 }
