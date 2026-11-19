@@ -5,7 +5,8 @@
   "name": "DiggerMan",
   "alternateName": [
     "Dico Nhlakanipho Dube",
-    "DiggerMan SA"
+    "DiggerMan SA",
+    "Dico Nhlakanipho Phakathi"
   ],
   "description": "DiggerMan is a South African independent recording artist and songwriter from Riverlea, West Johannesburg. His artist catalogue and creative identity connect Amapiano, Afro House and Deep House with personal storytelling and place-based cultural memory.",
   "url": "https://kingpinpkaytee-dot.github.io/",
@@ -54,5 +55,34 @@
       "url": "https://kingpinpkaytee-dot.github.io/thekingpin-entertainment-site/riverlea-west-archive/",
       "name": "Riverlea West Archive"
     }
-  ]
+  ],
+  "member": {
+    "@type": "Person",
+    "@id": "https://kingpinpkaytee-dot.github.io/#person",
+    "name": "Dico Nhlakanipho Dube",
+    "alternateName": [
+      "Dico Nhlakanipho Phakathi"
+    ],
+    "description": "Dico Nhlakanipho Dube, also known as Dico Nhlakanipho Phakathi, is the person behind the DiggerMan recording-artist identity.",
+    "url": "https://kingpinpkaytee-dot.github.io/#person",
+    "sameAs": [
+      "https://www.linkedin.com/in/kingpin-pkaytee-970036393",
+      "https://www.instagram.com/nhlakanipho_phakathi",
+      "https://www.facebook.com/nhlakanipho.dube.75",
+      "https://www.threads.net/@nhlakanipho_phakathi",
+      "https://x.com/KPkaytee1346",
+      "https://www.tiktok.com/@dico_nhlakaniphophakathi"
+    ],
+    "memberOf": {
+      "@id": "https://kingpinpkaytee-dot.github.io/#musicgroup"
+    },
+    "subjectOf": [
+      {
+        "@id": "https://kingpinpkaytee-dot.github.io/blog/diggerman-artist-spotlight/#article"
+      },
+      {
+        "@id": "https://kingpinpkaytee-dot.github.io/diggerman-media-press-kit/"
+      }
+    ]
+  }
 }
