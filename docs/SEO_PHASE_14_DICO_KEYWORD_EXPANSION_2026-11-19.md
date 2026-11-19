@@ -80,3 +80,33 @@ Google's current guidance recommends using the words people search for in promin
 - The Spotify artist page itself was not edited.
 - The keyword changes are prepared in Git branches for review; no production deployment is included in this phase.
 - Google indexing and search-result behavior still require subsequent crawl/URL Inspection checks.
+
+
+## Merge record
+
+The Phase 14 keyword-support changes were merged across the five repositories:
+
+| Repository | Pull request | Merge commit |
+|---|---:|---|
+| `kingpinpkaytee-dot/kingpinpkaytee-dot.github.io` | #4 | `a701ed574814969ed2e716e1a5ce651eeefdc0dc` |
+| `kingpinpkaytee-dot/diggerman-site` — landing pages and 68 track keywords | #23 | `9ba674d385c0d59c03dda6ae054ee21b8dbb00f5` |
+| `kingpinpkaytee-dot/diggerman-site` — track metadata repair | #25 | `2b5e56958ab1d8b3f49cde34d16c5589783cf1ca` |
+| `kingpinpkaytee-dot/thekingpin-entertainment-site` | #7 | `e99493c2e3a1c4e733ec69bc01105f48274cb334` |
+| `kingpinpkaytee-dot/diggerman-media-press-kit` | #4 | `df93472eb149dac2e420a8b8786fb54cfbc532c8` |
+| `kingpinpkaytee-dot/global-music-submission-portal` | #8 | `b002f9bf15912d48909e03a2e91aa86b044faa85` |
+
+## Artist Frequency deployment
+
+The Artist Frequency update was deployed through Wrangler 4.165.0 to the existing Cloudflare Pages production project after PR #8 merged.
+
+- Canonical production host: https://global-music-submission-portal.pages.dev/
+- Immutable deployment URL: https://3faa9852.global-music-submission-portal.pages.dev/
+- Source commit: `b002f9bf15912d48909e03a2e91aa86b044faa85`
+- Wrangler reported deployment complete; one new asset was uploaded and nine were already present.
+- Acer HTTP checks returned 200 for the homepage, `src/app.js`, `src/auth.js` and `src/supabase-client.js`. The homepage contained both Dico name forms and the canonical Spotify Artist ID.
+
+## Post-merge website smoke check
+
+A direct HTTP request from the Acer returned 200 and found the Dico personal-name reference plus the supplemental keyword metadata on the hub, Spotlight, official artist homepage, music catalogue landing page, company homepage, Riverlea archive and press kit. The 68 track-page metadata repair was merged separately in PR #25; its live GitHub Pages propagation should be checked after the merge.
+
+This confirms deployment/reachability and source-content consistency only. It does not establish Google indexing, rankings or a Knowledge Panel.
