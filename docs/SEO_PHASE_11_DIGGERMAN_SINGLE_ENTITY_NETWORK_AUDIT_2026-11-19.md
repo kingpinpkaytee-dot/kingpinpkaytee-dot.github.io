@@ -1,6 +1,6 @@
 # SEO Phase 11 — DiggerMan Single-Entity Network Audit & High-Frequency Information Profile
 Date: 2026-11-19
-Status: implementation prepared for merge; production verification pending.
+Status: merged to all three repositories; partial production verification completed, with the new short redirect and refreshed HTML still awaiting confirmed deployment.
 
 ## Objective
 Consolidate DiggerMan's official artist identity across the requested GitHub Pages destinations so search engines, media partners and external information systems encounter one consistently identified artist entity rather than several competing artist records.
@@ -63,5 +63,10 @@ Created machine-readable profile:
 - [x] Canonical article is retained in the sitemap and refreshed.
 - [x] Media / Press Kit has one OG image declaration and one Twitter image declaration.
 - [x] High-frequency entity profile JSON file created.
-- [ ] PR merged and production deployment verified.
-- [ ] Live URL status, redirects, metadata and structured-data output verified after deployment.
+- [x] Root hub PR #1 merged; merge commit d8826358d223c14df73c7d52c61e555080a90ba6.
+- [x] DiggerMan Official PR #20 merged; merge commit 7fc45be6e10ed2a48a248ce8c1ba5b8342ed71bd.
+- [x] Media Press Kit PR #1 merged; merge commit 20a71331349ee04888b35a794a76db1770e18c1e.
+- [x] GitHub main-branch source contains the new alias route, entity profile JSON, canonical artist IDs and refreshed memo.
+- [x] Initial live check: root hub HTTP 200; canonical spotlight article HTTP 200; DiggerMan Official HTTP 200; Media Press Kit HTTP 200; entity profile JSON HTTP 200.
+- [ ] Initial live check still returned HTTP 404 for the new short alias `/diggerman-artist-spotlight/`; root and two artist sites returned older cached HTML. A cache-busted follow-up request did not complete, so the full Pages deployment is not yet confirmed.
+- [ ] Recheck the short alias redirect and refreshed page HTML after GitHub Pages finishes deploying. Do not submit the short alias for indexing; it is noindex and the canonical blog article is the indexable URL.
