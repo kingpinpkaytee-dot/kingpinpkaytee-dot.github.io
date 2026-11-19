@@ -1,0 +1,82 @@
+# SEO Phase 14 — Dico Search-Keyword Expansion Across the Artist Network
+Date: 19 November 2026
+
+## Objective
+
+Add the user-requested search term **Dico** consistently to the eight connected SEO network areas supporting the DiggerMan identity, while preserving the distinction between the person, recording artist, company and Artist Frequency platform.
+
+The canonical identity chain remains:
+
+- Person: `Dico Nhlakanipho Dube`
+- Confirmed alternate personal name: `Dico Nhlakanipho Phakathi`
+- Recording artist: `DiggerMan`
+- Spotify Artist profile: https://open.spotify.com/artist/7fSMDP0eWrFwYol9Vye2Ty
+- Canonical MusicGroup ID: `https://kingpinpkaytee-dot.github.io/#musicgroup`
+- Canonical Person ID: `https://kingpinpkaytee-dot.github.io/#person`
+
+The short term `Dico` is included as a requested search phrase and artist-credit reference. It does not create a separate artist, second Spotify profile, or new legal identity.
+
+## Implementation summary
+
+The keyword cluster includes:
+- Dico
+- Dico Nhlakanipho Dube
+- Dico Nhlakanipho Phakathi
+- DiggerMan
+- DiggerMan Spotify
+- DiggerMan South Africa
+- Riverlea artist
+- South African independent recording artist
+- Relevant page-specific terms such as Amapiano, Afro House, Deep House, the artist catalogue, individual track titles and album titles.
+
+### Eight network areas
+
+| Network area | Dico keyword support added |
+|---|---|
+| 1. Media Press Kit | Search-focused title/description, keyword metadata, structured Website keywords, and the existing Person/MusicGroup identity links. |
+| 2. Artist Spotlight Blog | Search-focused title/description, Article keywords and the existing artist/person identity reference. |
+| 3. DiggerMan Official Website | Search-focused title/description, Website keywords and a Dico identity reference alongside the canonical Spotify destination. |
+| 4. The Kingpin Entertainment Website | Company title/description and Website keywords now reference Dico and DiggerMan without merging the company and artist entities. |
+| 5. Riverlea West Archive | Title/description and CollectionPage keywords connect Dico and DiggerMan to the curated Riverlea creative archive. |
+| 6. Music Catalogue | Catalogue title/description and CollectionPage keywords include Dico, DiggerMan, Spotify, catalogue and genre terms. All 68 individual track pages were also updated as described below. |
+| 7. Social Network Accounts | Owned sites' Person/MusicGroup references and profile links remain connected to the Dico/DiggerMan identity. No third-party social account bios or settings were edited. |
+| 8. Artist Frequency | Platform remains a separate Organization. Its Website keywords and existing Person/MusicGroup mentions connect the referenced artist identity without presenting DiggerMan as the portal owner or platform brand. |
+
+The canonical DiggerMan hub is also updated as the central identity anchor, with a WebPage keyword set and revised title/description.
+
+## Catalogue-wide track work
+
+All **68 individual track pages** listed in the existing sitemap were updated.
+
+Each track page now includes:
+- `Dico` and both full personal name forms in its page keyword metadata.
+- The individual track title and release/album title in its keyword set.
+- A `MusicRecording.keywords` list with the track-specific and artist identity phrases.
+- `byArtist` linked to the canonical DiggerMan MusicGroup ID.
+- The Spotify Artist URL and person-name variants in the structured artist reference.
+- A track description that connects Dico Nhlakanipho Dube to the DiggerMan recording identity.
+- A visible artist credit that reads DiggerMan (Dico Nhlakanipho Dube).
+
+Track titles, Spotify track links, album links, artwork, duration, release dates, track positions, canonical URLs and sitemap membership are preserved. No unverified music genres or new release data were added.
+
+## Google Search implementation note
+
+The legacy HTML `<meta name="keywords">` tag is included as a supplemental compatibility field because the request explicitly called for keyword metadata. **Google Search states that it does not use this tag and that it has no effect on indexing or ranking.** The meaningful search support in this phase is therefore the natural page text, revised page titles/descriptions, visible track artist credits, structured page/recording keywords, consistent artist identifiers and crawlable links.
+
+Google's current guidance recommends using the words people search for in prominent page locations and descriptive content, while avoiding repetitive keyword stuffing. This work adds the Dico identity term in context and does not promise rankings, indexing dates or a Knowledge Panel.
+
+## Quality assurance
+
+- The eight network landing/identity pages and central hub were updated on their review branches.
+- The 68 track pages were each successfully fetched, parsed as `MusicRecording` JSON-LD, transformed and written to the review branch.
+- The prior catalogue sitemap contains 73 URLs in total, including 68 individual track pages; the sitemap itself was not changed.
+- Canonical entity IDs and the Spotify Artist ID `7fSMDP0eWrFwYol9Vye2Ty` were preserved.
+- The Artist Frequency Organization remains separate from the DiggerMan MusicGroup and Dico Person entities.
+- No GTM/GA4, Search Console, robots, canonical URL, Supabase, or production deployment setting was modified by this phase.
+
+## Boundaries
+
+- Third-party social profile bios/settings were not changed.
+- The Spotify artist page itself was not edited.
+- The keyword changes are prepared in Git branches for review; no production deployment is included in this phase.
+- Google indexing and search-result behavior still require subsequent crawl/URL Inspection checks.
