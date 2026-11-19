@@ -51,8 +51,26 @@ The root DiggerMan hub and `diggerman-entity-profile.json` provide the central e
 - Google Tag Manager, GA4, Search Console, robots directives, canonical URLs and sitemap policy.
 - Individual track-page content and metadata: existing track pages continue to reference the canonical DiggerMan MusicGroup ID.
 - Artist Frequency authentication, Supabase data, migration history, publication policy and autonomous publishing.
-- Cloudflare Pages deployment: source changes are staged for review; no production deployment is performed by this memo.
+- Cloudflare Pages deployment: Artist Frequency PR #7 is merged into the portal's main branch, but its live Cloudflare artifact was not redeployed. The Acer HTTP check returned 200 for the current Pages host but did not find the new alias or Spotify link in the served HTML. The repository's production-release gate remains in force; no Wrangler deployment was run.
 
 ## Search outcome note
 
 These edits strengthen consistency and machine-readable identity relationships across the owned network. They do not guarantee Google Knowledge Panel creation, a particular ranking, an indexing date, or a specific search-result layout. Re-crawl and indexing confirmation remain separate follow-up checks.
+
+## Merge and live verification record
+
+The five implementation pull requests were merged on 19 November 2026:
+
+| Repository | PR | Merge commit |
+|---|---:|---|
+| kingpinpkaytee-dot/kingpinpkaytee-dot.github.io | #3 | 87e9be2e8512f1402540c9ce46865f4ecba51741 |
+| kingpinpkaytee-dot/diggerman-site | #22 | 5acb0bba59223b7acc0c90a0ff7bf97eb865abb4 |
+| kingpinpkaytee-dot/thekingpin-entertainment-site | #6 | 0373aaeb512019c64de57ed52d4fcf83573dbfc6 |
+| kingpinpkaytee-dot/diggerman-media-press-kit | #3 | 26946a9c15379c9d1017329135752d4dc34cc7c9 |
+| kingpinpkaytee-dot/global-music-submission-portal | #7 | fcbbab4e22753bfac753e47aa8f162804333e304 |
+
+A direct HTTP check from the connected Acer returned status 200 and found both the Dico Nhlakanipho Phakathi alias and Spotify Artist ID in the served HTML for the seven GitHub Pages routes: the root hub, Spotlight article, DiggerMan website, catalogue landing page, company website, Riverlea Archive and press kit.
+
+The Artist Frequency Cloudflare Pages host also returned HTTP 200, but the live HTML did not yet contain the new alias or Spotify Artist ID. Its source update is merged, while the hosted artifact remains unchanged pending the separate production-release gate.
+
+The social profile URLs are referenced consistently from the Person and MusicGroup entities and owned network pages. Social account bios/settings have not been edited or independently re-verified.
