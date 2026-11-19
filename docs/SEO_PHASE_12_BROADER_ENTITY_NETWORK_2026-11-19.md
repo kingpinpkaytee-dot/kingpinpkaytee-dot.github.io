@@ -88,3 +88,21 @@ Added public profile links to the network pages and artist entity profile:
 - Next verification targets: root hub, blog, press kit, DiggerMan website, company website, Riverlea West Archive, catalogue, JSON entity profile and all relevant sitemap routes.
 
 **Phase 12 source implementation: merged. Production verification: pending. Indexing: on hold.**
+
+
+## Production crawl follow-up — 2026-11-19
+A public web crawl was run after the Phase 12 merges.
+
+### Pages retrieved by the public crawler
+- Root DiggerMan hub: HTTP page content retrieved; Spotlight navigation and Riverlea Archive reference are visible. Some network destinations shown in the extracted page still reflect the previous content set.
+- Artist blog landing page: retrieved; Artist Spotlight card and links to the core network are visible.
+- Canonical Artist Spotlight article: retrieved; canonical article content and catalogue / Spotify / SoundCloud links are visible. Its displayed update date remains 15 September 2026, so the expected Phase 11/12 updated article metadata is not yet confirmed live.
+- Media Press Kit: retrieved; main navigation exposes Music and Archive sections, but the crawler extraction does not confirm the full newly added social/DSP link section or current entity JSON-LD.
+
+### Pages not retrieved by this crawler
+The public crawler returned an internal retrieval error for the short Spotlight alias, DiggerMan Official website, music catalogue, Kingpin company website, new Riverlea West Archive URL and JSON entity profile. These are **unverified**, not confirmed HTTP 404 responses.
+
+### Deployment gate
+This crawl is not enough to certify Phase 12 production rollout. Treat the pages that were retrieved as partial evidence only; treat all inaccessible routes and all unobserved metadata as unverified. The prior Acer-side batched HTTP check was started but did not return results within two polls; no HTTP status codes were obtained from that process.
+
+**Decision:** keep Google Search Console indexing requests on hold. Do not spend the remaining indexing quota until the inaccessible routes resolve and the live HTML confirms canonical MusicGroup ID, separate company Organization ID, archive relationships, social/DSP links, sitemaps and structured data. GTM/GA4 remains parked.
