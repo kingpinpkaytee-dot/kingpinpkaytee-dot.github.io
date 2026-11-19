@@ -110,3 +110,15 @@ The Artist Frequency update was deployed through Wrangler 4.165.0 to the existin
 A direct HTTP request from the Acer returned 200 and found the Dico personal-name reference plus the supplemental keyword metadata on the hub, Spotlight, official artist homepage, music catalogue landing page, company homepage, Riverlea archive and press kit. The 68 track-page metadata repair was merged separately in PR #25; its live GitHub Pages propagation should be checked after the merge.
 
 This confirms deployment/reachability and source-content consistency only. It does not establish Google indexing, rankings or a Knowledge Panel.
+
+
+## Track-page post-repair live verification
+
+The clean metadata repair was merged to the DiggerMan website repository in PR #25 (merge commit `2b5e56958ab1d8b3f49cde34d16c5589783cf1ca`).
+
+A post-merge HTTP check from the Acer returned HTTP 200 for three representative live track pages:
+- Dico — `/music/tracks/the-gorilla-zone-2-0/dico/`
+- We Are One (1.0) — `/music/tracks/celestial-frequency-1-0/we-are-one-1-0/`
+- CELESTIAL FREQUENCY Remix (2.0) — `/music/tracks/celestial-frequency-2-0/celestial-frequency-remix-2-0/`
+
+Each served page had exactly one standard description tag, one Open Graph description tag, one Twitter description tag and one supplemental keywords tag. Each page's visible DiggerMan/Dico credit and canonical Spotify Artist ID were present. This is a representative smoke test, not a claim that all 68 URLs have individually been fetched post-deployment.
