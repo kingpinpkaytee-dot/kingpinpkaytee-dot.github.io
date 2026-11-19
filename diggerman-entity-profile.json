@@ -1,0 +1,50 @@
+{
+  "@context": "https://schema.org",
+  "@type": "MusicGroup",
+  "@id": "https://kingpinpkaytee-dot.github.io/#musicgroup",
+  "name": "DiggerMan",
+  "alternateName": [
+    "Dico Nhlakanipho Dube",
+    "DiggerMan SA"
+  ],
+  "description": "DiggerMan is a South African independent recording artist and songwriter from Riverlea, West Johannesburg. His artist catalogue and creative identity connect Amapiano, Afro House and Deep House with personal storytelling and place-based cultural memory.",
+  "url": "https://kingpinpkaytee-dot.github.io/",
+  "genre": [
+    "Amapiano",
+    "Afro House",
+    "Deep House"
+  ],
+  "identifier": {
+    "@type": "PropertyValue",
+    "propertyID": "MusicBrainz Artist ID",
+    "value": "56a9fd42-e71b-4292-93b2-6662e1588503",
+    "url": "https://musicbrainz.org/artist/56a9fd42-e71b-4292-93b2-6662e1588503"
+  },
+  "sameAs": [
+    "https://kingpinpkaytee-dot.github.io/",
+    "https://kingpinpkaytee-dot.github.io/diggerman-site/",
+    "https://kingpinpkaytee-dot.github.io/diggerman-media-press-kit/",
+    "https://kingpinpkaytee-dot.github.io/blog/diggerman-artist-spotlight/",
+    "https://open.spotify.com/artist/7fSMDP0eWrFwYol9Vye2Ty",
+    "https://soundcloud.com/diggerman-768471594",
+    "https://musicbrainz.org/artist/56a9fd42-e71b-4292-93b2-6662e1588503",
+    "https://www.instagram.com/nhlakanipho_phakathi",
+    "https://www.facebook.com/DiggerManAndTheKingpinEntertainment",
+    "https://www.threads.net/@nhlakanipho_phakathi",
+    "https://x.com/KPkaytee1346",
+    "https://www.tiktok.com/@dico_nhlakaniphophakathi",
+    "https://caribsocial.net/artist/diggerman"
+  ],
+  "parentOrganization": {
+    "@type": "Organization",
+    "@id": "https://kingpinpkaytee-dot.github.io/thekingpin-entertainment-site/#company",
+    "name": "The Kingpin Entertainment Pty Ltd",
+    "url": "https://kingpinpkaytee-dot.github.io/thekingpin-entertainment-site/"
+  },
+  "subjectOf": {
+    "@type": "Article",
+    "@id": "https://kingpinpkaytee-dot.github.io/blog/diggerman-artist-spotlight/#article",
+    "url": "https://kingpinpkaytee-dot.github.io/blog/diggerman-artist-spotlight/",
+    "headline": "DiggerMan: Turning Riverlea Stories Into a Living Sound"
+  }
+}
